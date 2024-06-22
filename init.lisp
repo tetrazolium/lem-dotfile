@@ -15,4 +15,4 @@
   `(,lem-paredit-mode:*paredit-mode-keymap* . (("M-w" . lem-paredit-mode:paredit-wrap-round))))
 
 (define-keys-in-maps *new-paredit-keys*)
-;(ql:quickload "lem/legit")
+(ql:quickload "lem/legit")
