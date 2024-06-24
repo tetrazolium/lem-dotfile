@@ -9,17 +9,17 @@
   (define-key lem-paredit-mode:*paredit-mode-keymap* "]" nil)
   (define-key lem-paredit-mode:*paredit-mode-keymap* "{" nil)
   (define-key lem-paredit-mode:*paredit-mode-keymap* "}" nil)
-  (define-key lem-vi-mode:*insert-keymap* "(" 'paredit-insert-paren)
-  (define-key lem-vi-mode:*insert-keymap* ")" 'paredit-close-parenthesis)
-  (define-key lem-vi-mode:*insert-keymap* "[" 'paredit-insert-bracket)
-  (define-key lem-vi-mode:*insert-keymap* "]" 'paredit-close-bracket)
-  (define-key lem-vi-mode:*insert-keymap* "{" 'paredit-insert-brace)
-  (define-key lem-vi-mode:*insert-keymap* "}" 'paredit-close-bracke)
+  (define-key lem-vi-mode:*insert-keymap* "(" 'lem-paredit-mode:paredit-insert-paren)
+  (define-key lem-vi-mode:*insert-keymap* ")" 'lem-paredit-mode:paredit-close-parenthesis)
+  (define-key lem-vi-mode:*insert-keymap* "[" 'lem-paredit-mode:paredit-insert-bracket)
+  (define-key lem-vi-mode:*insert-keymap* "]" 'lem-paredit-mode:paredit-close-bracket)
+  (define-key lem-vi-mode:*insert-keymap* "{" 'lem-paredit-mode:paredit-insert-brace)
+  (define-key lem-vi-mode:*insert-keymap* "}" 'lem-paredit-mode:paredit-close-bracket)
   )
 (add-hook lem-lisp-mode:*lisp-mode-hook* #'lem-paredit-hook)
 ;Unbreak "{" and "}" in lisp-mode
 
-
+;Copy pasted from another config
 (defun define-keys-in-maps (&rest keymap-pairs)
   (loop :for (keymap . new-key-list) :in keymap-pairs
         :do (loop :for (key . action) :in new-key-list
@@ -31,5 +31,6 @@
 (define-keys-in-maps *new-paredit-keys*)
 (ql:quickload "lem/legit")
 ;Unbreak up and down in vi-mode
-;(define-key lem/peek-legit:*peek-legit-keymap* "d" 'lem/peek-legit:peek-legit-discard-file)
-;(define-key lem/peek-legit:*peek-legit-keymap* "k" nil)
+(define-key lem/peek-legit:*peek-legit-keymap* "p" 'lem/peek-legit:peek-legit-discard-file)
+(define-key lem/peek-legit:*peek-legit-keymap* "k" 'lem/peek-legit:peek-legit-previous)
+(define-key lem/peek-legit:*peek-legit-keymap* "j" 'lem/peek-legit:peek-legit-next)
