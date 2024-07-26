@@ -29,8 +29,8 @@
   `(,lem-paredit-mode:*paredit-mode-keymap* . (("M-w" . lem-paredit-mode:paredit-wrap-round))))
 
 (define-keys-in-maps *new-paredit-keys*)
-(ql:quickload "lem/legit")
+(ql:quickload "lem-legit")
 ;Unbreak up and down in vi-mode
-(define-key lem/peek-legit:*peek-legit-keymap* "p" 'lem/peek-legit:peek-legit-discard-file)
-(define-key lem/peek-legit:*peek-legit-keymap* "k" 'lem/peek-legit:peek-legit-previous)
-(define-key lem/peek-legit:*peek-legit-keymap* "j" 'lem/peek-legit:peek-legit-next)
+(define-key lem/legit:*peek-legit-keymap* "p" 'lem/legit:peek-legit-discard-file)
+(define-key lem/legit:*peek-legit-keymap* "k" 'lem/legit:peek-legit-previous)
+(define-key lem/legit:*peek-legit-keymap* "j" 'lem/legit:peek-legit-next)
