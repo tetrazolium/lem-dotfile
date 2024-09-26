@@ -16,6 +16,7 @@
   (define-key lem-vi-mode:*insert-keymap* "{" 'lem-paredit-mode:paredit-insert-brace)
   (define-key lem-vi-mode:*insert-keymap* "}" 'lem-paredit-mode:paredit-close-bracket)
   )
+(setf (lem-vi-mode:option-value "number") t)
 (add-hook lem-lisp-mode:*lisp-mode-hook* #'lem-paredit-hook)
 ;Unbreak "{" and "}" in lisp-mode
 
